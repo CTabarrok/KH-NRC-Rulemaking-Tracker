@@ -3,17 +3,21 @@
 
   "NRC-2019-0062": {
     "manual": true,
-    "title": "10 CFR Part 53 — Risk-Informed, Performance-Based Licensing for Advanced Reactors",
+    "title": "10 CFR Part 53 — Risk-Informed, Technology-Inclusive Regulatory Framework for Commercial Nuclear Plants",
     "cfr": ["53"],
     "phase": "Complete",
-    "pubDate": "2026-03-27",
+    "pubDate": "2026-03-30",
+    "complianceDate": "2026-04-29",
     "deadline": null,
     "docketUrl": "https://www.regulations.gov/docket/NRC-2019-0062",
-    "nrcUrl": "https://www.nrc.gov/reactors/new-reactors/advanced/rulemaking-and-guidance/part-53-licensing.html",
+    "nrcUrl": "https://www.nrc.gov/reactors/new-reactors/advanced/modernizing/rulemaking/part-53",
+    "frUrl": "https://www.federalregister.gov/documents/2026/03/30/2026-06048/risk-informed-technology-inclusive-regulatory-framework-for-advanced-reactors",
+    "frCitation": "91 FR 15696",
     "eo14300": false,
+    "cprPriority": "High",
     "practice": "SMR & Advanced Reactor Siting",
-    "summary": "Establishes a new licensing pathway tailored to advanced reactor designs that don't fit the LWR-shaped Part 50 / Part 52 mold. Mandated by NEIMA (2019). Final rule published March 2026.",
-    "implication": "Removes the exemption-by-exemption pattern that has slowed every non-LWR developer. For clients evaluating SMR or advanced reactor siting at industrial or data center campuses, Part 53 is now the realistic licensing track to plan around."
+    "summary": "Optional alternative to Part 50 / Part 52 for licensing commercial nuclear plants — risk-informed, performance-based, technology-inclusive. Final rule 91 FR 15696 published March 30, 2026; effective April 29, 2026. Headline provisions: alternative siting criteria (§ 53.530), factory fuel loading (§ 53.620), expanded use of consensus codes (§ 53.440), and new Part 26 / Part 73 frameworks for fitness-for-duty and physical security.",
+    "implication": "The most consequential siting change in 60+ years. § 53.530 lets applicants site reactors in areas of higher population density — including centers of more than ~25,000 residents — contingent on a societal-risk-vs-societal-benefit demonstration. Directly enables the data-center and industrial-load colocation thesis that Part 100's distance-based criteria has historically blocked. Applications under Part 53 can be filed now. The 'societal risk vs benefit' framework is undefined in regulation — that's where early applicant-side consulting work will live until Reg Guide 4.7 Rev. 5 fills the gap."
   },
 
   "NRC-2025-1336": {
@@ -102,8 +106,8 @@
 
   "NRC-2025-0975": {
     "practice": "Cross-Cutting / SMR Siting",
-    "summary": "The umbrella rewrite. Touches Parts 2, 50, 51, 52, 54, 71, and 100 — staged licensing, risk-informed oversight scaling, expanded siting flexibility, decommissioning timelines, and inspection/reporting rationalization.",
-    "implication": "The single highest-leverage rule in the EO 14300 package, and the one most likely to define how new nuclear actually deploys this decade. Read in full when published. Touches every aspect of Task Force work — siting, EP, oversight, decommissioning, data-center colocation pathways."
+    "summary": "The umbrella rewrite. Touches Parts 2, 50, 51, 52, 54, 71, and 100 — staged licensing, risk-informed oversight scaling, expanded siting flexibility (Part 100 reactor site criteria), decommissioning timelines, and inspection/reporting rationalization. Proposed rule projected late June 2026; final expected late 2026.",
+    "implication": "The single highest-leverage rule in the EO 14300 package, and the one most likely to define how new nuclear actually deploys this decade. Carries the Part 100 site-criteria rewrite that Part 53 § 53.530 only addresses for the optional advanced-reactor track — meaning this is what unlocks higher-density siting for the operating fleet, Part 50 / Part 52 applicants, and any non-Part-53 new build. Read in full when proposed. Touches every aspect of Task Force work: siting, EP, oversight, decommissioning, and data-center colocation pathways."
   },
 
   "NRC-2025-1237": {
