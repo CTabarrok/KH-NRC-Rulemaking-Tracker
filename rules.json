@@ -1,0 +1,60 @@
+name: Update NRC Rulemaking Data
+
+on:
+  schedule:
+    # Every 6 hours at :05 past the hour (offset to avoid GH cron pile-ups on the hour)
+    - cron: '5 */6 * * *'
+  workflow_dispatch:        # manual trigger from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - 'data/practice_notes.json'   # re-run when curated commentary changes
+      - 'scripts/scrape.py'
+      - 'scripts/requirements.txt'
+      - '.github/workflows/update-tracker.yml'
+
+permissions:
+  contents: write           # needed to commit the updated rules.json
+
+concurrency:
+  group: nrc-scraper
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Show diff vs current data (informational)
+        run: python scripts/scrape.py --dry-run --diff
+        continue-on-error: true
+
+      - name: Run scraper
+        run: python scripts/scrape.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/rules.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%MZ")
+            git commit -m "data: refresh NRC rulemakings (${TIMESTAMP})"
+            git push
+            echo "Pushed updated rules.json."
+          fi
